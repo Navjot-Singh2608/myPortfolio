@@ -1,0 +1,7 @@
+.profilePic {
+  position: relative !important;
+  width: 30em !important;
+  height: 40em !important;
+  opacity: 0.8;
+  border-radius: 0.2em;
+}
