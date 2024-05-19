@@ -21,6 +21,13 @@ export default async function Home() {
               >
                 <i className="fa fa-linkedin" />
               </a>
+              <a href="https://leetcode.com/u/navjotsingh1123/" target="_blank">
+                <img
+                  src="/imgs/icons/leetcode.svg"
+                  alt="Leetcode"
+                  className="shadow-dark"
+                />
+              </a>
             </div>
           </div>
         </div>
