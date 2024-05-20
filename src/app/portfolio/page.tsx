@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import shopCartImage from "/public/imgs/portfolio/shopCart.png";
+import shopCartImage from "/public/imgs/portfolio/shopCart.jpg";
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
