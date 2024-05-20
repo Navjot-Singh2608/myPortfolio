@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import shopCartImage from "/public/imgs/portfolio/shopCart.png";
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -8,7 +9,7 @@ const PortfolioPage = () => {
     {
       id: 1,
       category: "react",
-      imgSrc: "/imgs/portfolio/shopCart.png",
+      imgSrc: shopCartImage,
       title: "React Application",
       technologies: "React, TypeScript",
       githubLink: "https://github.com/yourusername/react-project",
