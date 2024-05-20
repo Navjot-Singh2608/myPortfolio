@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import shopCartImage from "/public/imgs/portfolio/shopCart.jpg";
+import Image from "next/image";
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -130,7 +131,7 @@ const PortfolioPage = () => {
               >
                 <div className="portfolio-item-inner shadow-dark">
                   <div className="portfolio-img">
-                    <img src={project.imgSrc} alt={project.title} />
+                    <Image src={project.imgSrc} alt={project.title} />
                   </div>
                   <div className="portfolio-info">
                     <h4>{project.title}</h4>
