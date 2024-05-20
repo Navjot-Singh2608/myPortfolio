@@ -794,13 +794,32 @@ select {
   -webkit-transform: translateX(0px);
   transform: translateX(0px);
 }
+
+/* For giving technologies on the card */
+.portfolio .portfolio-item .portfolio-info p {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.portfolio .portfolio-item-inner:hover .portfolio-info p {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
 .portfolio .portfolio-item .portfolio-info .icon {
   height: 40px;
   width: 40px;
   background-color: #fff;
   text-align: center;
   border-radius: 50%;
-  position: absolute;
+  /* position: absolute; */
   right: 30px;
   bottom: 30px;
   opacity: 0;
