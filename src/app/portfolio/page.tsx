@@ -1,65 +1,22 @@
 "use client";
 import { useState } from "react";
-import shopCartImage from "/public/imgs/portfolio/shopCart.jpg";
-import Image from "next/image";
+import "./portfolio.css";
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+
+  const categories = ["all", "react", "angular", "java", "python", "cloud"];
 
   const projects = [
     {
       id: 1,
       category: "react",
-      imgSrc: shopCartImage,
-      title: "React Application",
-      technologies: "React, TypeScript",
-      githubLink: "https://github.com/yourusername/react-project",
-      liveLink: "https://shop-cart-vvwj.vercel.app/",
-    },
-    {
-      id: 2,
-      category: "angular",
-      imgSrc: "/imgs/portfolio/2.jpg",
-      title: "Angular Project",
-      technologies: "Angular, TypeScript",
-      githubLink: "https://github.com/yourusername/angular-project",
-      liveLink: "https://your-live-project-link.com",
-    },
-    {
-      id: 3,
-      category: "java",
-      imgSrc: "/imgs/portfolio/3.jpg",
-      title: "Java Project",
-      technologies: "Java, Spring Boot",
-      githubLink: "https://github.com/yourusername/java-project",
-      liveLink: "https://your-live-project-link.com",
-    },
-    {
-      id: 4,
-      category: "python",
-      imgSrc: "/imgs/portfolio/4.jpg",
-      title: "Python Project",
-      technologies: "Python, Flask",
-      githubLink: "https://github.com/yourusername/python-project",
-      liveLink: "https://your-live-project-link.com",
-    },
-    {
-      id: 5,
-      category: "cloud",
-      imgSrc: "/imgs/portfolio/5.jpg",
-      title: "Cloud Project",
-      technologies: "AWS, Docker",
-      githubLink: "https://github.com/yourusername/cloud-project",
-      liveLink: "https://your-live-project-link.com",
-    },
-    {
-      id: 6,
-      category: "react",
-      imgSrc: "/imgs/portfolio/6.jpg",
-      title: "Another React Project",
-      technologies: "React, Redux",
-      githubLink: "https://github.com/yourusername/another-react-project",
-      liveLink: "https://your-live-project-link.com",
+      imgSrc: "/imgs/portfolio/shopCart.jpg",
+      title: "shopCart",
+      githubUrl: "https://github.com/Navjot-Singh2608/shopCart",
+      liveUrl: "https://shop-cart-vvwj.vercel.app/",
+      description: "",
+      techStack: ["React", "Typescript"],
     },
   ];
 
@@ -78,51 +35,20 @@ const PortfolioPage = () => {
           </div>
           <div className="row">
             <div className="portfolio-filter padd-15">
-              <button
-                type="button"
-                className={activeCategory === "all" ? "active" : ""}
-                onClick={() => setActiveCategory("all")}
-              >
-                All
-              </button>
-              <button
-                type="button"
-                className={activeCategory === "react" ? "active" : ""}
-                onClick={() => setActiveCategory("react")}
-              >
-                React
-              </button>
-              <button
-                type="button"
-                className={activeCategory === "angular" ? "active" : ""}
-                onClick={() => setActiveCategory("angular")}
-              >
-                Angular
-              </button>
-              <button
-                type="button"
-                className={activeCategory === "java" ? "active" : ""}
-                onClick={() => setActiveCategory("java")}
-              >
-                Java
-              </button>
-              <button
-                type="button"
-                className={activeCategory === "python" ? "active" : ""}
-                onClick={() => setActiveCategory("python")}
-              >
-                Python
-              </button>
-              <button
-                type="button"
-                className={activeCategory === "cloud" ? "active" : ""}
-                onClick={() => setActiveCategory("cloud")}
-              >
-                Cloud Projects
-              </button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`filter-btn ${
+                    activeCategory === category ? "active" : ""
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
             </div>
           </div>
-          <div className="row">
+          <div className="row scale-50">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
@@ -131,37 +57,38 @@ const PortfolioPage = () => {
               >
                 <div className="portfolio-item-inner shadow-dark">
                   <div className="portfolio-img">
-                    <Image src={project.imgSrc} alt={project.title} />
+                    <img src={project.imgSrc} alt={project.title} />
                   </div>
                   <div className="portfolio-info">
                     <h4>{project.title}</h4>
-                    {project.technologies.split(", ").map((tech, index) => (
-                      <button key={index} className="project-tech-button">
-                        {tech}
-                      </button>
-                    ))}
-
-                    <div className="project-view-links">
-                      <div className="icon">
+                    {/* <p>{project.description}</p> */}
+                    <div className="portfolio-info-hover">
+                      <div className="tech-stack">
+                        {project.techStack.map((tech, index) => (
+                          <span key={index} className="tech-badge">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="project-view-links-icons">
                         <a
-                          href={project.githubLink}
+                          href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title="View on GitHub"
+                          className="icon-left"
                         >
-                          <i className="fa fa-github" aria-hidden="true"></i>
+                          <i className="fa fa-github fa-2x"></i>
                         </a>
-                      </div>
-                      <div className="icon">
                         <a
-                          href={project.liveLink}
+                          href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          title="View Live Demo"
+                          className="icon-right"
                         >
-                          <i className="fa fa-globe" aria-hidden="true"></i>
+                          <i className="fa fa-desktop fa-2x"></i>
                         </a>
-                      </div>
-                      <div className="icon">
-                        <i className="fa fa-search" />
                       </div>
                     </div>
                   </div>
