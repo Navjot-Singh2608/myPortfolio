@@ -54,7 +54,7 @@ const Sidebar = () => {
               href="/portfolio"
               className={`${pathUrl === "/portfolio" ? "active" : ""}`}
             >
-              <i className="fa fa-briefcase" /> Portfolio
+              <i className="fa fa-briefcase" /> Projects
             </Link>
           </li>
 
