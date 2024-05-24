@@ -52,6 +52,7 @@ const PortfolioPage = () => {
           <div className="row scale-50">
             {filteredProjects.map((project) => (
               <Tippy
+                className="customtooltip"
                 key={project.id}
                 delay={[500, 0]} // Delay of 500ms for showing and no delay for hiding
                 duration={[300, 0]}

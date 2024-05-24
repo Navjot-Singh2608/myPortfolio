@@ -92,17 +92,23 @@
 #tippy-2 {
   z-index: 9999;
   visibility: visible;
-  background-color: whitesmoke;
-  box-shadow: rgb(221, 221, 221) 0px 0px 16px 8px;
   padding: 13px;
   border-radius: 14px;
   position: absolute;
   inset: 0px auto auto 0px;
   margin: 0px;
   transform: translate3d(386.667px, 93.3333px, 0px);
+}
+
+.customtooltip {
+  background-color: whitesmoke;
+  box-shadow: rgb(221, 221, 221) 0px 0px 16px 8px;
+  padding: 13px;
+  border-radius: 14px;
   height: 216px;
   top: -82px;
 }
+
 /* Custom Tippy.js theme */
 .tippy-box[data-theme~="custom"] {
   background-color: #333; /* Your desired background color */
